@@ -7,10 +7,32 @@
 
 body{
     font-family: roboto;
-    background-image: url(../images/bgSection1.png);
+    background-image: url(../images/iPhone\ X\,\ XS\,\ 11\ Pro\ –\ 1.png);
     background-repeat: no-repeat;
 }
 
 .poppins{
     font-family: poppins;
+}
+
+.center{
+    display: flex;
+    margin: auto;
+}
+
+.half-size-image{
+    width: 50%;
+}
+
+footer{
+    background-image: url(../images/BgFooter.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--c-primary);
+}
+
+@media (min-width: 991px){
+    body{
+        background-image: url(../images/bgSection1.png);
+    }
 }
