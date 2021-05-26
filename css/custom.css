@@ -1,18 +1,150 @@
+/* variables & scaling */
 :root{
-    --c-primary: #1487FD;
-    --c-secondary: #FFBB00;
-    --c-dark: #333333;
-    --c-light: #8A8A8A;
+    --c-primary: rgb(20, 135, 253);
+    --c-secondary: rgb(255, 187, 0);
+    --c-dark: rgb(51, 51, 51);
+    --c-light: rgb(138, 138, 138);
+    --c-download: rgb(248, 248, 248);
+    --c-yellow-box-bg: rgb(255, 187, 0, 15%);
+    --size-section1-h: 1.5rem;
+    --size-section1-p: 0.9375rem;
+    --path-bg1: url(../images/Footer.png);
+    --height-min-header: 0vh;
+    --string-active-nav-item-before: "";
+    --height-mb-header: 5rem;
+    --height-mt-section2: 5rem;
+    --height-mb-section2: 3rem;
+    --border-radius: 10px;
+    --height-py-download: 0.8125rem;
+    --width-pr-download: 1.5625rem;
+    --width-pl-download: 1.5625rem;
+    --size-download-small: 0.75rem;
+    --size-section2-h: 2.5rem;
+    --size-section3-p: 0.875rem;
+    --size-section3-h: 1.25rem;
+    --height-py-section3: 4rem;
+    --height-pt-section5: 2.1rem;
+    --height-min-section5: 22.6875rem;
+    --height-mb-section5: 4rem;
+    --size-ad-stat: 2.5rem;
+    --size-section6-h: 1.3rem;
+    --height-pt-section6: 3.375rem;
+    --height-pb-section6: 3.375rem;
+    --height-mb-section6-h: 1.875rem;
+    --height-my-section7: 3rem;
+    --height-mt-contact: 3.125rem;
 }
+@media (min-width: 768px){
+    :root{
+        --size-section1-h: 3.5625rem;
+        --size-section1-p: 0.9375rem;
+        --size-section6-h: 3.125rem;
+        --path-bg1: url(../images/bgSection1.png);
+        --height-min-header: 935px;
+        --width-btn-padding: 2rem;
+        --string-active-nav-item-before: "___";
+        --height-mb-header: 13.90625rem;
+        --height-mt-section2: 7.975rem;
+        --height-mb-section2: 7.5rem;
+        --height-py-section3: 5.625rem;
+        --height-py-download: 0.8125rem;
+        --height-pb-section6: 0rem;
+        --height-my-section7: 7.5rem;
+        /* --width-pr-download: 3.5rem;
+        --width-pl-download: 1.5625rem; */
+    }
+    
+    .background{
+        position: static !important;
+        z-index: unset;
+        opacity: 100% !important;
+    }
+    .foreground{
+        z-index: unset;
+    }
+    
+    .section-2 .background{
+        margin-left: -9rem;
+    }
+}
+@media (min-width: 992px){
+    :root{
+        --size-section1-h: 3.5625rem;
+        --size-section1-p: 0.9375rem;
+        --size-section6-h: 3.125rem;
+        --path-bg1: url(../images/bgSection1.png);
+        --height-min-header: 935px;
+        --width-btn-padding: 2rem;
+        --string-active-nav-item-before: "___";
+        --height-mb-header: 13.90625rem;
+        --height-mt-section2: 7.975rem;
+        --height-mb-section2: 7.5rem;
+        --height-py-section3: 5.625rem;
+        --height-py-download: 0.8125rem;
+        --height-pb-section6: 0rem;
+        --height-my-section7: 7.5rem;
+        /* --width-pr-download: 3.5rem;
+        --width-pl-download: 1.5625rem; */
+    }
+    
+    .background{
+        position: static !important;
+        z-index: unset;
+        opacity: 100% !important;
+    }
+    .foreground{
+        z-index: unset;
+    }
+}
+
+/* base elements */
 
 body{
     font-family: roboto;
-    background-image: url(../images/iPhone\ X\,\ XS\,\ 11\ Pro\ –\ 1.png);
-    background-repeat: no-repeat;
 }
 
-.poppins{
+header{
+    background-image: var(--path-bg1);
+    background-repeat: no-repeat;
+    background-position: top;
+    overflow: hidden;
+    min-height: var(--height-min-header);
+    margin-bottom: var(--height-mb-header);
+}
+
+footer{
+    background-image: url(/images/BgFooter.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: var(--c-primary);
+    
+    padding: 3.625rem, 0 !important;
+}
+
+a{
+    text-decoration: none !important;
+    color: white;
+}
+
+img{
     font-family: poppins;
+}
+
+h2{
+    font-weight: bold;
+    font-size: var(--size-section2-h);
+    margin-bottom: 1.25rem;
+}
+
+textarea{
+    resize: none;
+    overflow-y: auto;
+}
+
+/* custom utilities */
+
+.poppins{
+    font-family: poppins !important;
 }
 
 .center{
@@ -24,21 +156,193 @@ body{
     width: 50%;
 }
 
-.nav-link {
-    color: white;
+.download-cta{
+    font-size: 1.375rem;
+    font-weight: bold;
 }
 
-footer{
-    background-image: url(../images/BgFooter.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: var(--c-primary);
+.download-small{
+    font-size: var(--size-download-small);
+}
+
+.download-link{
+    position: relative;
+    background-color: var(--c-download);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 14.5rem;
+    padding-top: var(--height-py-download) !important;
+    padding-bottom: var(--height-py-download) !important;
+}
+
+.yellow-box{
+    background-color: var(--c-yellow-box-bg);
+    color: var(--c-secondary);
+    border-radius: var(--border-radius);
     
-    padding: 3.625rem, 0 !important;
+    display: inline-block;
+    padding: 0.3rem 1rem;
 }
 
-@media (min-width: 991px){
-    body{
-        background-image: url(../images/bgSection1.png);
-    }
+.background{
+    position: absolute;
+    z-index: -1;
+    opacity: 30%;
+}
+
+.foreground{
+    z-index: 1;
+}
+
+.ad-stat{
+    color: var(--c-primary);
+    font-size: var(--size-ad-stat);
+    font-weight: bold;
+}
+
+.ad-stat-desc{
+    
+}
+
+/* Owl Carousel instances and items */
+
+.corner img, 
+.owl-itme.active:not(.owl-item.active + .owl-item.active), 
+.owl-item.active + .owl-item.active + .owl-item.active + .owl-item.active + .owl-item.active{
+    opacity: 30%;
+}
+
+.item, .owl-item{
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transform: scaleY(1); 
+}
+.selected img, .owl-item.active + .owl-item.active + .owl-item.active:not(.owl-item.active + .owl-item.active + .owl-item.active + .owl-item.active){
+    transform: scaleY(1.1);
+}
+
+/* bootstrap utility overrides */
+
+.btn-secondary, .bg-secondary{
+    background-color: var(--c-secondary) !important;
+}
+
+.btn{
+    border-radius: var(--border-radius) !important;
+}
+
+/* navbar */
+
+.nav-link{
+    font-size: 1.125em;
+}
+.nav-link:not(:hover) {
+    color: white !important;
+}
+
+li.nav-itam.active{
+    position: relative !important;
+    right: 5rem;
+    z-index: 0;
+}
+
+li.nav-item.active .nav-link{
+    color: var(--c-secondary) !important;
+}
+/* .nav-itam.active .nav-link::before, .nav-itam.active::marker,  */
+li.active a::before {
+    content: var(--string-active-nav-item-before) !important;
+    position: relative;
+    color: var(--c-secondary);
+    bottom: -0.5rem;
+    left: 1.5rem;
+    z-index: 1;
+}
+
+/* section 1 */
+
+.h-section1{
+    font-size: var(--size-section1-h) !important;
+    font-weight: bold !important;
+    font-family: poppins;
+}
+
+.p-section1{
+    font-size: var(--size-section1-p);
+    font-family: poppins;
+}
+
+/* section 2 */
+
+.section-2{
+    margin-top: var(--height-mt-section2);
+    margin-bottom: var(--height-mb-section2);
+}
+
+/* section 3 */
+
+.section-3{
+    padding-top: var(--height-py-section3);
+    padding-bottom: var(--height-py-section3);
+    /* background-color: rgba(245, 245, 245, 31%); */
+    background-image: url(/images/Features.png);
+    background-position: top
+}
+
+.p-section3{
+    font-size: var(--size-section3-p);
+}
+
+.h-section3{
+    font-size: var(--size-section3-h);
+}
+
+.yellow-icon{
+    min-height: 2.8125rem;
+    min-width: 2.8125rem;
+    margin-right: 1.25rem;
+}
+
+/* section 5 */
+
+.section-5{
+    padding-top: var(--height-pt-section5);
+    min-height: var(--height-min-section5);
+    margin-bottom: var(--height-mb-section5);
+    background-image: url(/images/bgSection5.png);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/* section 6 */
+
+.section-6{
+    background-color: var(--c-primary);
+    background-image: url(/images/bgSection6.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    padding-top: var(--height-pt-section6);
+    padding-bottom: var(--height-pb-section6);
+
+    overflow: hidden;
+}
+
+.h-section6{
+    font-size: var(--size-section6-h) !important;
+    font-weight: bold !important;
+    color: white;
+    margin-bottom: var(--height-mb-section6-h);
+}
+
+/* section 7 */
+
+.section-7{
+    margin-top: var(--height-my-section7);
+    margin-bottom: var(--height-my-section7);
+}
+
+#section7-contact-form{
+    margin-top: var(--height-mt-contact);
 }
